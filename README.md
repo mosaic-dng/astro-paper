@@ -1,6 +1,6 @@
 # 防火长城会梦见自由互联网吗？
 
-404 的中文博客，使用 AstroPaper 6.1.0，部署于 Vercel。
+使用 AstroPaper 6.1.0，部署于 Vercel。
 
 - 网站：https://ccio.eu.org/
 - [文章发布和修改说明](docs/使用说明.md)
