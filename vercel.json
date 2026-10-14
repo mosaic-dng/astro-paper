@@ -1,0 +1,409 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "astro",
+  "buildCommand": "pnpm run build",
+  "installCommand": "pnpm install --frozen-lockfile",
+  "outputDirectory": "dist",
+  "redirects": [
+    {
+      "source": "/article/top-secure-proxy-services1",
+      "destination": "/posts/top-secure-proxy-services1",
+      "statusCode": 301
+    },
+    {
+      "source": "/1ac68a6e96af802bbc63fb9d01dcfa35",
+      "destination": "/posts/top-secure-proxy-services1",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/1ac68a6e96af802bbc63fb9d01dcfa35",
+      "destination": "/posts/top-secure-proxy-services1",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/top-secure-proxy-services3",
+      "destination": "/posts/top-secure-proxy-services3",
+      "statusCode": 301
+    },
+    {
+      "source": "/1ad68a6e96af801eabe3e53ca8524121",
+      "destination": "/posts/top-secure-proxy-services3",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/1ad68a6e96af801eabe3e53ca8524121",
+      "destination": "/posts/top-secure-proxy-services3",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/second-tier-privacy-tools-ranking3",
+      "destination": "/posts/second-tier-privacy-tools-ranking3",
+      "statusCode": 301
+    },
+    {
+      "source": "/1ad68a6e96af80518178d16da849cef9",
+      "destination": "/posts/second-tier-privacy-tools-ranking3",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/1ad68a6e96af80518178d16da849cef9",
+      "destination": "/posts/second-tier-privacy-tools-ranking3",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/top-secure-proxy-services2",
+      "destination": "/posts/top-secure-proxy-services2",
+      "statusCode": 301
+    },
+    {
+      "source": "/1ad68a6e96af805c9fbdd439cf9b1b0f",
+      "destination": "/posts/top-secure-proxy-services2",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/1ad68a6e96af805c9fbdd439cf9b1b0f",
+      "destination": "/posts/top-secure-proxy-services2",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/top-secure-proxy-services6",
+      "destination": "/posts/top-secure-proxy-services6",
+      "statusCode": 301
+    },
+    {
+      "source": "/1ad68a6e96af8060b778d2331c4a54c1",
+      "destination": "/posts/top-secure-proxy-services6",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/1ad68a6e96af8060b778d2331c4a54c1",
+      "destination": "/posts/top-secure-proxy-services6",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/top-secure-proxy-services5",
+      "destination": "/posts/top-secure-proxy-services5",
+      "statusCode": 301
+    },
+    {
+      "source": "/1ad68a6e96af80948ed6d123d589bf8c",
+      "destination": "/posts/top-secure-proxy-services5",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/1ad68a6e96af80948ed6d123d589bf8c",
+      "destination": "/posts/top-secure-proxy-services5",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/second-tier-privacy-tools-ranking1",
+      "destination": "/posts/second-tier-privacy-tools-ranking1",
+      "statusCode": 301
+    },
+    {
+      "source": "/1ad68a6e96af80c19fbae5a865de6b6a",
+      "destination": "/posts/second-tier-privacy-tools-ranking1",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/1ad68a6e96af80c19fbae5a865de6b6a",
+      "destination": "/posts/second-tier-privacy-tools-ranking1",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/second-tier-privacy-tools-ranking2",
+      "destination": "/posts/second-tier-privacy-tools-ranking2",
+      "statusCode": 301
+    },
+    {
+      "source": "/1ad68a6e96af80c3b722cb6d36f15e43",
+      "destination": "/posts/second-tier-privacy-tools-ranking2",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/1ad68a6e96af80c3b722cb6d36f15e43",
+      "destination": "/posts/second-tier-privacy-tools-ranking2",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/top-secure-proxy-services4",
+      "destination": "/posts/top-secure-proxy-services4",
+      "statusCode": 301
+    },
+    {
+      "source": "/1ad68a6e96af80e4b23cdad7270e1c22",
+      "destination": "/posts/top-secure-proxy-services4",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/1ad68a6e96af80e4b23cdad7270e1c22",
+      "destination": "/posts/top-secure-proxy-services4",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/second-tier-privacy-tools-ranking7",
+      "destination": "/posts/second-tier-privacy-tools-ranking7",
+      "statusCode": 301
+    },
+    {
+      "source": "/1ae68a6e96af802f89dee44ab4c76d85",
+      "destination": "/posts/second-tier-privacy-tools-ranking7",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/1ae68a6e96af802f89dee44ab4c76d85",
+      "destination": "/posts/second-tier-privacy-tools-ranking7",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/second-tier-privacy-tools-ranking11",
+      "destination": "/posts/second-tier-privacy-tools-ranking11",
+      "statusCode": 301
+    },
+    {
+      "source": "/1ae68a6e96af803181e6fa4939eb430c",
+      "destination": "/posts/second-tier-privacy-tools-ranking11",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/1ae68a6e96af803181e6fa4939eb430c",
+      "destination": "/posts/second-tier-privacy-tools-ranking11",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/node-service-buying-tips",
+      "destination": "/posts/node-service-buying-tips",
+      "statusCode": 301
+    },
+    {
+      "source": "/1ae68a6e96af803b8630df6be30d40cf",
+      "destination": "/posts/node-service-buying-tips",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/1ae68a6e96af803b8630df6be30d40cf",
+      "destination": "/posts/node-service-buying-tips",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/second-tier-privacy-tools-ranking8",
+      "destination": "/posts/second-tier-privacy-tools-ranking8",
+      "statusCode": 301
+    },
+    {
+      "source": "/1ae68a6e96af803eb1d7e9b3a0629124",
+      "destination": "/posts/second-tier-privacy-tools-ranking8",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/1ae68a6e96af803eb1d7e9b3a0629124",
+      "destination": "/posts/second-tier-privacy-tools-ranking8",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/second-tier-privacy-tools-ranking10",
+      "destination": "/posts/second-tier-privacy-tools-ranking10",
+      "statusCode": 301
+    },
+    {
+      "source": "/1ae68a6e96af804abd16edc6f8e476ae",
+      "destination": "/posts/second-tier-privacy-tools-ranking10",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/1ae68a6e96af804abd16edc6f8e476ae",
+      "destination": "/posts/second-tier-privacy-tools-ranking10",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/second-tier-privacy-tools-ranking4",
+      "destination": "/posts/second-tier-privacy-tools-ranking4",
+      "statusCode": 301
+    },
+    {
+      "source": "/1ae68a6e96af805bb0fae0b137158bfa",
+      "destination": "/posts/second-tier-privacy-tools-ranking4",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/1ae68a6e96af805bb0fae0b137158bfa",
+      "destination": "/posts/second-tier-privacy-tools-ranking4",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/second-tier-privacy-tools-ranking9",
+      "destination": "/posts/second-tier-privacy-tools-ranking9",
+      "statusCode": 301
+    },
+    {
+      "source": "/1ae68a6e96af80baaa3dec8f0235669b",
+      "destination": "/posts/second-tier-privacy-tools-ranking9",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/1ae68a6e96af80baaa3dec8f0235669b",
+      "destination": "/posts/second-tier-privacy-tools-ranking9",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/second-tier-privacy-tools-ranking6",
+      "destination": "/posts/second-tier-privacy-tools-ranking6",
+      "statusCode": 301
+    },
+    {
+      "source": "/1ae68a6e96af80c29368d9b29583dd05",
+      "destination": "/posts/second-tier-privacy-tools-ranking6",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/1ae68a6e96af80c29368d9b29583dd05",
+      "destination": "/posts/second-tier-privacy-tools-ranking6",
+      "statusCode": 301
+    },
+    {
+      "source": "/1ae68a6e96af80c5a5bbef28ec9358cf",
+      "destination": "/posts/shouhou-network",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/1ae68a6e96af80c5a5bbef28ec9358cf",
+      "destination": "/posts/shouhou-network",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/second-tier-privacy-tools-ranking5",
+      "destination": "/posts/second-tier-privacy-tools-ranking5",
+      "statusCode": 301
+    },
+    {
+      "source": "/1ae68a6e96af80c6b5d2d1612cf23318",
+      "destination": "/posts/second-tier-privacy-tools-ranking5",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/1ae68a6e96af80c6b5d2d1612cf23318",
+      "destination": "/posts/second-tier-privacy-tools-ranking5",
+      "statusCode": 301
+    },
+    {
+      "source": "/1af68a6e96af803a87e2cf126192609f",
+      "destination": "/posts/yiyuan-node-service",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/1af68a6e96af803a87e2cf126192609f",
+      "destination": "/posts/yiyuan-node-service",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/direct-node-service",
+      "destination": "/posts/direct-node-service",
+      "statusCode": 301
+    },
+    {
+      "source": "/1af68a6e96af80c6a5bfdb8bba02cb6a",
+      "destination": "/posts/direct-node-service",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/1af68a6e96af80c6a5bfdb8bba02cb6a",
+      "destination": "/posts/direct-node-service",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/vps-xuan-gou-zhi-nan",
+      "destination": "/posts/vps-xuan-gou-zhi-nan",
+      "statusCode": 301
+    },
+    {
+      "source": "/2ce68a6e96af807d83fbf9be834db4dc",
+      "destination": "/posts/vps-xuan-gou-zhi-nan",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/2ce68a6e96af807d83fbf9be834db4dc",
+      "destination": "/posts/vps-xuan-gou-zhi-nan",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/proxy-toolbox",
+      "destination": "/posts/proxy-toolbox",
+      "statusCode": 301
+    },
+    {
+      "source": "/37668a6e96af80a1ac8bd2df2f5e756e",
+      "destination": "/posts/proxy-toolbox",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/37668a6e96af80a1ac8bd2df2f5e756e",
+      "destination": "/posts/proxy-toolbox",
+      "statusCode": 301
+    },
+    {
+      "source": "/tag",
+      "destination": "/tags/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tag/:tag",
+      "destination": "/tags/:tag",
+      "statusCode": 301
+    },
+    {
+      "source": "/tag/:tag/page/:page",
+      "destination": "/tags/:tag/:page",
+      "statusCode": 301
+    },
+    {
+      "source": "/category",
+      "destination": "/categories/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/:category",
+      "destination": "/categories/:category",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/:category/page/:page",
+      "destination": "/categories/:category/:page",
+      "statusCode": 301
+    },
+    {
+      "source": "/archive",
+      "destination": "/archives/",
+      "statusCode": 301
+    },
+    {
+      "source": "/feed",
+      "destination": "/rss.xml",
+      "statusCode": 301
+    },
+    {
+      "source": "/feed.xml",
+      "destination": "/rss.xml",
+      "statusCode": 301
+    },
+    {
+      "source": "/rss",
+      "destination": "/rss.xml",
+      "statusCode": 301
+    },
+    {
+      "source": "/rss/feed.xml",
+      "destination": "/rss.xml",
+      "statusCode": 301
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/sitemap-index.xml",
+      "statusCode": 301
+    },
+    {
+      "source": "/page/:page",
+      "destination": "/posts/:page",
+      "statusCode": 301
+    }
+  ]
+}

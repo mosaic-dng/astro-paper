@@ -1,0 +1,24 @@
+---
+import { getCollection } from "astro:content";
+import type { GetStaticPathsOptions } from "astro";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import Breadcrumb from "@/components/Breadcrumb.astro";
+import Main from "@/components/Main.astro";
+import Card from "@/components/Card.astro";
+import Pagination from "@/components/Pagination.astro";
+import { getSortedPosts } from "@/utils/getSortedPosts";
+import { slugifyStr } from "@/utils/slugify";
+import config from "@/config";
+export async function getStaticPaths({paginate}:GetStaticPathsOptions){
+ const posts=getSortedPosts(await getCollection("posts"));
+ return [...new Set(posts.map(p=>p.data.category))].flatMap(category=>paginate(posts.filter(p=>p.data.category===category),{params:{category:slugifyStr(category)},props:{category},pageSize:config.posts.perPage}));
+}
+const {page,category}=Astro.props;
+---
+<Layout title={"分类："+category+" | "+config.site.title}>
+ <Header /><Breadcrumb />
+ <Main pageTitle={"分类："+category} pageDesc={"本分类共有 "+page.total+" 篇文章。"}><ul>{page.data.map(post=><Card {...post}/>)}</ul></Main>
+ <Pagination {page}/><Footer noMarginTop={page.lastPage>1}/>
+</Layout>
