@@ -1,6 +1,7 @@
 import {
   defineConfig,
   envField,
+  fontProviders,
   svgoOptimizer,
 } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
@@ -16,6 +17,7 @@ import {
   transformerNotationWordHighlight,
 } from "@shikijs/transformers";
 import { transformerFileName } from "./src/utils/transformers/fileName";
+import { rehypeArticleImages } from "./src/utils/rehypeArticleImages";
 import config from "./astro-paper.config";
 
 export default defineConfig({
@@ -36,11 +38,8 @@ export default defineConfig({
   },
   markdown: {
     processor: unified({
-      remarkPlugins: [
-        remarkToc,
-        [remarkCollapse, { test: "目录" }],
-      ],
-      rehypePlugins: [rehypeCallouts],
+      remarkPlugins: [remarkToc, [remarkCollapse, { test: "目录" }]],
+      rehypePlugins: [rehypeCallouts, rehypeArticleImages],
     }),
     shikiConfig: {
       themes: { light: "min-light", dark: "night-owl" },
@@ -57,6 +56,32 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  image: {
+    breakpoints: [320, 640, 768, 1536],
+  },
+  fonts: [
+    {
+      name: "Google Sans Code",
+      cssVariable: "--font-google-sans-code",
+      provider: fontProviders.google(),
+      // CJK glyphs use installed sans-serif fonts without additional downloads.
+      fallbacks: [
+        "PingFang SC",
+        "Hiragino Sans GB",
+        "Microsoft YaHei",
+        "Noto Sans CJK SC",
+        "Noto Sans SC",
+        "WenQuanYi Micro Hei",
+        "sans-serif",
+        // Keep Astro's metric-adjusted monospace fallback for Latin text.
+        "monospace",
+      ],
+      weights: [300, 400, 500, 600, 700],
+      styles: ["normal", "italic"],
+      // Satori needs the upstream formats only when dynamic OG images are enabled.
+      formats: config.features?.dynamicOgImage ? ["woff", "ttf"] : ["woff2"],
+    },
+  ],
   env: {
     schema: {
       PUBLIC_GOOGLE_SITE_VERIFICATION: envField.string({

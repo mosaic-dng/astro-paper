@@ -36,52 +36,83 @@ const t = useTranslations(Astro.currentLocale);
 </div>
 
 <script is:inline data-astro-rerun>
-  function backToTop() {
-    const rootElement = document.documentElement;
-    const btnContainer = document.querySelector("#btt-btn-container");
-    const backToTopBtn = document.querySelector("[data-button='back-to-top']");
-    const progressIndicator = document.querySelector("#progress-indicator");
-
-    if (!rootElement || !btnContainer || !backToTopBtn || !progressIndicator)
-      return;
-
-    backToTopBtn.addEventListener("click", () => {
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
+  (() => {
+    window.__backToTopCleanup?.();
+    const controller = new AbortController();
+    let frame = 0;
+    function cleanup() {
+      controller.abort();
+      cancelAnimationFrame(frame);
+      if (window.__backToTopCleanup === cleanup)
+        window.__backToTopCleanup = null;
+    }
+    window.__backToTopCleanup = cleanup;
+    document.addEventListener("astro:before-swap", cleanup, {
+      once: true,
+      signal: controller.signal,
     });
+    function backToTop() {
+      const rootElement = document.documentElement;
+      const btnContainer = document.querySelector("#btt-btn-container");
+      const backToTopBtn = document.querySelector(
+        "[data-button='back-to-top']"
+      );
+      const progressIndicator = document.querySelector("#progress-indicator");
 
-    let lastVisible = null;
-    function handleScroll() {
-      const scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
-      const scrollTop = rootElement.scrollTop;
-      const scrollPercent = Math.floor((scrollTop / scrollTotal) * 100);
+      if (!rootElement || !btnContainer || !backToTopBtn || !progressIndicator)
+        return;
 
-      progressIndicator.style.setProperty(
-        "background-image",
-        `conic-gradient(var(--accent), var(--accent) ${scrollPercent}%, transparent ${scrollPercent}%)`
+      backToTopBtn.addEventListener(
+        "click",
+        () => {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        },
+        { signal: controller.signal }
       );
 
-      const isVisible = scrollTop / scrollTotal > 0.3;
+      let lastVisible = null;
+      function handleScroll() {
+        const scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
+        const scrollTop = rootElement.scrollTop;
+        const scrollPercent =
+          scrollTotal > 0
+            ? Math.min(
+                100,
+                Math.max(0, Math.floor((scrollTop / scrollTotal) * 100))
+              )
+            : 0;
 
-      if (isVisible !== lastVisible) {
-        btnContainer.classList.toggle("opacity-100", isVisible);
-        btnContainer.classList.toggle("translate-y-0", isVisible);
-        btnContainer.classList.toggle("opacity-0", !isVisible);
-        btnContainer.classList.toggle("translate-y-14", !isVisible);
-        lastVisible = isVisible;
+        progressIndicator.style.setProperty(
+          "background-image",
+          `conic-gradient(var(--accent), var(--accent) ${scrollPercent}%, transparent ${scrollPercent}%)`
+        );
+
+        const isVisible = scrollTotal > 0 && scrollTop / scrollTotal > 0.3;
+
+        if (isVisible !== lastVisible) {
+          btnContainer.classList.toggle("opacity-100", isVisible);
+          btnContainer.classList.toggle("translate-y-0", isVisible);
+          btnContainer.classList.toggle("opacity-0", !isVisible);
+          btnContainer.classList.toggle("translate-y-14", !isVisible);
+          lastVisible = isVisible;
+        }
       }
+
+      document.addEventListener(
+        "scroll",
+        () => {
+          if (!frame) {
+            frame = window.requestAnimationFrame(() => {
+              frame = 0;
+              handleScroll();
+            });
+          }
+        },
+        { passive: true, signal: controller.signal }
+      );
+      handleScroll();
     }
-
-    let ticking = false;
-    document.addEventListener("scroll", () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          handleScroll();
-          ticking = false;
-        });
-        ticking = true;
-      }
-    });
-  }
-  backToTop();
+    backToTop();
+  })();
 </script>
