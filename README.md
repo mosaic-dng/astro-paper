@@ -21,5 +21,4 @@ Node.js 22（至少 22.12）、pnpm 11.25.0。依赖由 pnpm-lock.yaml 固定。
 构建：pnpm run build
 本地预览：pnpm run preview
 
-代码基于 [AstroPaper](https://github.com/satnaing/astro-paper)，保留 MIT 许可证。
-除文章中特别声明外，博客内容采用 CC BY-NC-SA 协议。
+代码基于 [AstroPaper](https://github.com/satnaing/astro-paper)
